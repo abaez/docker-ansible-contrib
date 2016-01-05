@@ -11,3 +11,8 @@ RUN pip install mock nose passlib
 
 # installing dvcs depends
 RUN apk add --update git mercurial subversion
+
+# cloned ansible source
+RUN git clone https://github.com/ansible/ansible.git --recursive
+RUN git clone https://github.com/ansible/ansible-modules-extras.git --recursive
+
