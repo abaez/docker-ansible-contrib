@@ -10,7 +10,7 @@ RUN curl -s https://bootstrap.pypa.io/get-pip.py | python -
 RUN pip install mock nose passlib
 
 # installing dvcs depends
-RUN apk add --update git mercurial subversion perl
+RUN apk add -U git mercurial subversion perl
 
 # cloned ansible source
 RUN git clone https://github.com/ansible/ansible.git --recursive
