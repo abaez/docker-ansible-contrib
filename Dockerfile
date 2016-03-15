@@ -3,7 +3,7 @@ FROM alpine
 MAINTAINER Alejandro Baez <https://twitter.com/a_baez>
 
 # install pre depends
-RUN apk add -U curl
+RUN apk add -U curl bash
 
 # install lang depends
 RUN apk add -U python ruby perl
@@ -20,8 +20,10 @@ RUN pip install mock nose passlib
 RUN git clone https://github.com/ansible/ansible.git --recursive
 RUN git clone https://github.com/ansible/ansible-modules-extras.git --recursive
 
+# install python needs
+RUN apk add py-yaml py-jinja2
+
 WORKDIR /ansible
 
-RUN source ./hacking/env-setup
+RUN ["/bin/bash", "-c", "source ./hacking/env-setup"]
 
-CMD ["ansible-playbook", "--version"]
