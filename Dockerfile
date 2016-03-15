@@ -3,14 +3,18 @@ FROM alpine
 MAINTAINER Alejandro Baez <https://twitter.com/a_baez>
 
 # install pre depends
-RUN apk add -U python ruby curl
+RUN apk add -U curl
+
+# install lang depends
+RUN apk add -U python ruby perl
+
+# installing dvcs depends
+RUN apk add -U git mercurial subversion
+
 RUN curl -s https://bootstrap.pypa.io/get-pip.py | python -
 
 # install python needs
 RUN pip install mock nose passlib
-
-# installing dvcs depends
-RUN apk add -U git mercurial subversion perl
 
 # cloned ansible source
 RUN git clone https://github.com/ansible/ansible.git --recursive
