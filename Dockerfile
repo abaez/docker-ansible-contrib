@@ -25,5 +25,7 @@ RUN apk add py-yaml py-jinja2
 
 WORKDIR /ansible
 
-RUN ["/bin/bash", "-c", "source ./hacking/env-setup"]
+ENTRYPOINT ["/bin/bash", "-c"]
+
+CMD ["source ./hacking/env-setup"]
 
