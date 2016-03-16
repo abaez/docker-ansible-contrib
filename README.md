@@ -5,8 +5,8 @@
 
 ### DESCRIPTION
 A docker container to be used for contributing or tweaking ansible. Nothing
-to breathtaking, but using the ansible's [helping testing][4] for guidelines
-in building the container.
+too breathtaking. Using the ansible's [helping testing][4] for guidelines
+in building the container. Currently uses `bash -c` as the entrypoint for ease of use.
 
 
 [1]: http://www.ansible.com/
