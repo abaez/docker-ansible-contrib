@@ -6,10 +6,10 @@ MAINTAINER Alejandro Baez <https://twitter.com/a_baez>
 RUN apk add -U curl bash
 
 # install lang depends
-RUN apk add -U python ruby perl
+RUN apk add python ruby perl
 
 # installing dvcs depends
-RUN apk add -U git mercurial subversion
+RUN apk add git mercurial subversion
 
 RUN curl -s https://bootstrap.pypa.io/get-pip.py | python -
 
