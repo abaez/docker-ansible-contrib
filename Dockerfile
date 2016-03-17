@@ -20,8 +20,8 @@ RUN pip install mock nose passlib
 RUN git clone https://github.com/ansible/ansible.git --recursive
 RUN git clone https://github.com/ansible/ansible-modules-extras.git --recursive
 
-# install python needs
-RUN apk add py-yaml py-jinja2
+# install python needs for modules
+RUN apk add py-yaml py-jinja2 py-crypto
 
 RUN echo "source /ansible/hacking/env-setup" >> ~/.bashrc
 
