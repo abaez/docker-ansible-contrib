@@ -23,6 +23,8 @@ RUN git clone https://github.com/ansible/ansible-modules-extras.git --recursive
 # install python needs
 RUN apk add py-yaml py-jinja2
 
+RUN echo "source /ansible/hacking/env-setup" >> ~/.bashrc
+
 WORKDIR /ansible
 
 ENTRYPOINT ["/bin/bash", "-c"]
