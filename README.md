@@ -7,7 +7,8 @@
 A docker container to be used for contributing or tweaking ansible. Nothing
 too breathtaking. Using the ansible's [helping testing][4] for guidelines
 in building the container. Currently uses `bash -c` as the entrypoint for ease
-of use. It holds `hacking/env-setup` on startup automatically.
+of use. It holds `hacking/env-setup` on startup automatically, with a
+`git -C /ansible pull` for the local container repository.
 
 
 [1]: http://www.ansible.com/
